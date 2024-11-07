@@ -1,0 +1,46 @@
+#python Variables
+#which stores value in variables
+x="alice" #x is the variable
+
+#Basic data types
+#Int
+#float
+#Str
+#boolean
+
+#List
+#list is mutable collection of elements ..we can change the contents
+
+fruits=["apple","banana","kiwi"]
+fruits.append("orange")
+print(fruits) #added orange in list
+
+#Tuples
+#tuples are immutable..we cannot change the content
+
+#Dictionaries 
+#it is collection key value pairs..each key should be unique..value can be anytype
+#dictionaries syntax{}
+
+person={
+    "name":"sami",
+    "age": 30
+}
+print(person["name"])
+
+#slicing alist
+#alows you to get a subset of a list
+
+num = [0,1,2,3,4,5,6,7]
+#slicing first 3 numbers
+#syntax[start:end]
+
+num_1=num[0:3] #it will not add the last number ,we have use +1
+print(num_1)
+
+#reverse slicing
+reverse_slicing="hello world"
+
+result=reverse_slicing[::-1]
+print(result)
+
