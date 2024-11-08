@@ -1,0 +1,118 @@
+#for 
+#whileloops
+#Range
+#continue
+#Break
+#Loops through dict and list
+
+#for loops used to iterate over sequence such as list,dictionary,set or string
+
+fruits=["apple","banana","cherry"]
+for i in fruits:
+    print(i)
+########
+
+for i in range (1,10):
+    print(i)    
+
+#skip numbers
+for i in range(0,10,2):
+    print(i)
+
+#write a loop from 1 to 10 use continue statement to skip printing the number 6
+for i in range(1,10 +1):
+    if i==6:
+        continue  #skip the number 6
+    print(i) 
+
+fruits=["banana","cherry","kiwi","orange"]
+for i in fruits:
+    if i == "banana":
+        continue 
+    print(i)    
+
+#break the loop
+for i in range(1,100000,5):
+    if i == 201:
+        break
+    print(i)
+
+ #dict and list
+fruits={
+     "fruit1":"kiwi",
+     "fruit2":"orange",
+     "fruit3":"banana",
+     "fruit4":"apple"
+     
+     }   
+for i ,x in fruits.items():
+    print(f"fruits:{i},fruitname:{x}")
+
+#while loops
+fruits=8
+fruits=fruits+1
+print(fruits)
+
+#minus
+fruits=8
+fruits=fruits-1
+print(fruits)
+
+#multiplication
+fruits=8
+fruits=fruits* 2
+print(fruits)
+
+#division
+fruits=10
+fruits=fruits/2
+print(fruits)   
+
+#whileloop 
+num=1
+while num < 10 :
+    print(num)
+    num +=1
+
+#counting down
+
+num=20
+while num > 5:
+    print(num) 
+    num-=1 
+
+#sum of numbers
+1-10
+
+total=0
+num=1
+while num <=4 :
+    total += num
+    print(num)
+
+    num+=1
+print(total)    
+
+#2
+num=3
+total=0
+while num <=4:
+    total += num
+    print(num)
+
+    #incresing number
+    num +=1
+print(total)    
+
+    
+
+
+
+  
+        
+        
+    
+    
+        
+      
+         
