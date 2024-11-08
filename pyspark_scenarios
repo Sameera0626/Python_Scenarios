@@ -1,0 +1,50 @@
+from pyspark.sql import SparkSession
+from pyspark.sql.functions import *
+
+# Sample data
+data = [("Alice", 5000), ("Bob", 7000), ("Charlie", 4000),
+        ("David", 6000), ("Eve", 7000), ("Frank", 5000)]
+columns = ["Employee", "Salary"]
+
+#create df
+df=spark.createDataFrame(data,columns)
+df.show()
+
+from pyspark.sql.window import Window
+
+#window partition by no specific column and order by salary descending
+window_spec=Window.orderBy(col("salary").desc())
+
+#use dense rank to assign rank to each salary
+df_rank=df.withColumn("rank",dense_rank().over(window_spec))
+
+#filter for the second highest salary
+df_filter=df_rank.filter(df_rank.rank==2)
+df_filter.show()
+
+
+
+#second highest salary department wise scenario
+
+
+data = [("Alice", "HR", 5000), ("Bob", "IT", 7000), ("Charlie", "HR", 4000),
+        ("David", "IT", 6000), ("Eve", "IT", 7000), ("Frank", "HR", 5000),
+        ("Grace", "Finance", 8000), ("Hannah", "Finance", 6000), ("Ivy", "Finance", 8000)]
+columns = ["Employee", "Department", "Salary"]
+
+# Create DataFrame
+df = spark.createDataFrame(data, columns)
+
+# Show the DataFrame
+df.show()
+
+#use window function to partition the department and order by salary
+window_spec=Window.partitionBy("department").orderBy(col("salary").desc())
+
+#applying dense_rank
+df_rank=df.withColumn("rank",dense_rank().over(window_spec))
+
+
+#filter 
+df_filter=df_rank.filter(df_rank.rank==2)
+df_filter.show()
